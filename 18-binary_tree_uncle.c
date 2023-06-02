@@ -9,11 +9,11 @@
  */
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
-	if (!node || !node->parent || !node->parent->parent)
-		return (NULL);
-
 	binary_tree_t *parent = node->parent;
 	binary_tree_t *grand_parent = parent->parent;
+
+	if (!node || !node->parent || !node->parent->parent)
+		return (NULL);
 
 	if (grand_parent->left == parent && grand_parent->right)
 		return (grand_parent->right);
